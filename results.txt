@@ -1,0 +1,35 @@
+command: siege -c10 -t20s http://127.0.0.1/martin/siege
+db: innodb-large
+query: SELECT name from category_
+
+Transactions:                    372 hits
+Availability:                 100.00 %
+Elapsed time:                  19.30 secs
+Data transferred:               4.40 MB
+Response time:                  0.01 secs
+Transaction rate:              19.28 trans/sec
+Throughput:                     0.23 MB/sec
+Concurrency:                    0.13
+Successful transactions:         378
+Failed transactions:               0
+Longest transaction:            0.03
+Shortest transaction:           0.00
+
+
+
+command: siege -c10 -t20s http://127.0.0.1/martin/siege
+db: innodb-large-index
+query: SELECT name from category_
+
+Transactions:                    368 hits
+Availability:                 100.00 %
+Elapsed time:                  19.98 secs
+Data transferred:              14.43 MB
+Response time:                  0.01 secs
+Transaction rate:              18.42 trans/sec
+Throughput:                     0.72 MB/sec
+Concurrency:                    0.13
+Successful transactions:         375
+Failed transactions:               0
+Longest transaction:            0.03
+Shortest transaction:           0.00
