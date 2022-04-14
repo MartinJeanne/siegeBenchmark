@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `innodb-large`
 --
+
+DROP DATABASE IF EXISTS `innodb-large`;
 CREATE DATABASE IF NOT EXISTS `innodb-large` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `innodb-large`;
 

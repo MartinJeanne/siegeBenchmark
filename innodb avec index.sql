@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `innodb-large`
 --
+
+DROP DATABASE IF EXISTS `innodb-large-index`;
 CREATE DATABASE IF NOT EXISTS `innodb-large-index` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `innodb-large-index`;
 
@@ -33,8 +35,6 @@ CREATE TABLE `category_` (
   `id` mediumint(8) UNSIGNED NOT NULL,
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-CREATE INDEX `indexName` ON `category_` (`name`);
 
 -- --------------------------------------------------------
 
@@ -51,6 +51,9 @@ CREATE TABLE `user_` (
                          `city` varchar(255) DEFAULT NULL,
                          `idCategory` mediumint(8) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE INDEX `indexOnUserName` ON `user_` (`firstname`);
+CREATE INDEX `indexOnUserAge` ON `user_` (`age`);
 
 
 --
